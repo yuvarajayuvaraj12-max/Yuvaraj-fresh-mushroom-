@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuvaraj Fresh Mushroom</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f6fff7;color:#17351f}
+header{background:#176b36;color:white;text-align:center;padding:28px 16px}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0}
+.hero{padding:30px 18px;text-align:center;background:#e9f8ec}
+.hero h2{font-size:26px;margin:8px 0}
+.hero p{font-size:17px}
+.container{max-width:700px;margin:auto;padding:20px 16px}
+.card{background:white;border-radius:16px;padding:20px;margin:15px 0;box-shadow:0 3px 12px #00000012}
+.product{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.price{font-weight:bold;font-size:18px}
+button{border:0;border-radius:10px;background:#176b36;color:white;padding:12px 18px;font-size:16px;cursor:pointer}
+input,select,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #ccc;border-radius:9px;font-size:16px}
+.whatsapp{display:block;text-align:center;text-decoration:none;background:#159447;color:white;padding:14px;border-radius:10px;font-weight:bold;margin-top:12px}
+footer{text-align:center;padding:25px;background:#17351f;color:white;margin-top:25px}
+.small{font-size:14px;color:#55705b}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🍄 Yuvaraj Fresh Mushroom</h1>
+  <p>Fresh • Hygienic • Farm Fresh</p>
+</header>
+
+<section class="hero">
+  <h2>ತಾಜಾ Oyster Mushroom</h2>
+  <p>ನಮ್ಮ farmನಲ್ಲಿ ಬೆಳೆದ fresh mushroom — Harapanahalli ಮತ್ತು ಸುತ್ತಮುತ್ತ delivery.</p>
+</section>
+
+<div class="container">
+
+  <div class="card">
+    <h2>🍄 ನಮ್ಮ Products</h2>
+
+    <div class="product">
+      <div><b>Oyster Mushroom – 250g</b><br><span class="small">Fresh packed</span></div>
+      <span class="price">₹40</span>
+    </div>
+    <hr>
+
+    <div class="product">
+      <div><b>Oyster Mushroom – 500g</b><br><span class="small">Fresh packed</span></div>
+      <span class="price">₹75</span>
+    </div>
+    <hr>
+
+    <div class="product">
+      <div><b>Oyster Mushroom – 1kg</b><br><span class="small">Fresh packed</span></div>
+      <span class="price">₹140</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🛒 Order Now</h2>
+
+    <label>ನಿಮ್ಮ ಹೆಸರು</label>
+    <input id="name" placeholder="ಹೆಸರು">
+
+    <label>Mobile Number</label>
+    <input id="phone" placeholder="Mobile number">
+
+    <label>Product</label>
+    <select id="product">
+      <option value="Oyster Mushroom 250g - ₹40">250g - ₹40</option>
+      <option value="Oyster Mushroom 500g - ₹75">500g - ₹75</option>
+      <option value="Oyster Mushroom 1kg - ₹140">1kg - ₹140</option>
+    </select>
+
+    <label>Quantity</label>
+    <input id="qty" type="number" min="1" value="1">
+
+    <label>Delivery Address</label>
+    <textarea id="address" rows="3" placeholder="ನಿಮ್ಮ ವಿಳಾಸ"></textarea>
+
+    <button onclick="orderWhatsApp()" style="width:100%">📲 WhatsApp ಮೂಲಕ Order ಮಾಡಿ</button>
+  </div>
+
+  <div class="card">
+    <h2>📞 Contact</h2>
+    <p>📱 <b>9535546855</b></p>
+    <p>📍 Harapanahalli, Karnataka</p>
+    <a class="whatsapp" href="https://wa.me/919535546855" target="_blank">WhatsApp Chat</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Yuvaraj Fresh Mushroom
+</footer>
+
+<script>
+function orderWhatsApp(){
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const product=document.getElementById("product").value;
+  const qty=document.getElementById("qty").value;
+  const address=document.getElementById("address").value.trim();
+
+  if(!name || !phone || !address){
+    alert("ದಯವಿಟ್ಟು ಹೆಸರು, Mobile Number ಮತ್ತು Address ತುಂಬಿ.");
+    return;
+  }
+
+  const msg =
+`🍄 Yuvaraj Fresh Mushroom Order
+
+ಹೆಸರು: ${name}
+Mobile: ${phone}
+Product: ${product}
+Quantity: ${qty}
+Delivery Address: ${address}
+
+ದಯವಿಟ್ಟು ನನ್ನ order confirm ಮಾಡಿ.`;
+
+  window.open("https://wa.me/919535546855?text="+encodeURIComponent(msg), "_blank");
+}
+</script>
+
+</body>
+</html>
